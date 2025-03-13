@@ -16,12 +16,14 @@
     <select name="category_id" required>
         <option value="0">Izvēlies kategoriju</option>
         @foreach ($categories as $category)
-            <option value="{{ $category->id }}"  >
-                {{ $category->$category_name }}
-            </option>
-        @endforeach
+                <option value="{{ $category->id }}">
+                    {{ $category->category_name }}
+                </option>
+                @endforeach
+
+</select>
 </label>
-    </select>
+    
     @error('category_id')
     <p>{{ $message }}</p>
     @enderror

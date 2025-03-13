@@ -25,7 +25,7 @@ class CategoryController extends Controller
             "category_name" => ["required", "max:255"]
             ]);  
         
-            Post::create([
+            Category::create([
             "category_name" =>$validated["category_name"],
 
             ]);
@@ -35,12 +35,12 @@ class CategoryController extends Controller
 
     public function show(Category $category)
     {
-        return view("categories.show", compact("categories"));
+        return view("categories.show", compact("category"));
     }
 
     public function edit(Category $category)
 {
-    return view('categories.edit', compact('categories'));
+    return view('categories.edit', compact('category'));
 }
 
     public function update(Request $request, Category $category)
@@ -49,8 +49,8 @@ class CategoryController extends Controller
             'category_name' => ['required', 'max:255'],
         ]);
     
-        $category_name->content = $validated['category_name'];
-        $post->save();
+        $category->category_name = $validated['category_name'];
+        $category->save();
     
         return redirect("/categories");
     }

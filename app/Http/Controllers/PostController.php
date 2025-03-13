@@ -18,7 +18,7 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view("posts.create", compact('posts', 'category_id'));
+        return view("posts.create", compact('categories'));
     }
 
     public function store(Request $request) {
