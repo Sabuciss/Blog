@@ -4,7 +4,8 @@
     {{ $post->content }}
   </x-slot:title>
 
-  <h1>{{ $post->content }}</h1> 
+  <h1>{{ $post->content }}</h1>
+  <p>Kategorija: {{ $post->category->category_name }}</p>
 
   
 <a href="/posts/{{ $post->id }}/edit">Rediģē</a>

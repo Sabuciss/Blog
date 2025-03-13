@@ -8,4 +8,12 @@ class Post extends Model
 {
     protected $fillable = ["content" , 'category_id'];
 
+
+     /**
+     * Posts pieder vienai kategorijai
+     */
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
