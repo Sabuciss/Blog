@@ -14,15 +14,18 @@
         <p>{{ $message }}</p>
     @enderror
 
-    <!-- <select name="category_id">
-@foreach ($options as $key => $value)
-    <option value="{{ $key }}" @if ($key == old('myselect', $model->option)) selected="selected"  @endif >{{ $value }}</option>
-@endforeach
-</select> -->
+    <label>Kategorija:</label>
+        <select name="category_id" required>
+            @foreach ($categories as $category)
+                <option value="{{ $category->id }}" {{ $category->id == old('category_id', $post->category_id) ? 'selected' : '' }}>
+                {{ $category-> $category_name }}
+                </option>
+            @endforeach
+        </select>
 
-    @error('category_id')
-        <p>{{ $message }}</p>
-    @enderror
+        @error('category_id')
+            <p>{{ $message }}</p>
+        @enderror
 
     <button type="submit">saglabā</button>
 </form>

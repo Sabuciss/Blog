@@ -11,23 +11,21 @@
   @error("content")
   <p>{{ $message }}</p>
  @enderror
- <label for="category_id">Kategorija:</label>
+
+<label>Kategorija:
     <select name="category_id" required>
-        <option value="">Izvēlies kategoriju</option>
-        @foreach ($options as $category)
-            <option value="{{ $category->id }}"
-                @if (old('category_id') == $category->id) 
-                    selected="selected"
-                @endif
-            >
-                {{ $category->name }}
+        <option value="0">Izvēlies kategoriju</option>
+        @foreach ($categories as $category)
+            <option value="{{ $category->id }}"  >
+                {{ $category->$category_name }}
             </option>
         @endforeach
+</label>
     </select>
     @error('category_id')
     <p>{{ $message }}</p>
     @enderror
-    
+
  <button >Saglabāt</button>
 </form>
         
