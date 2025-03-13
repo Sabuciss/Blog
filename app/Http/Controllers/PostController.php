@@ -18,12 +18,13 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view("posts.create");
+        return view("posts.create", compact('posts', 'category_id'));
     }
 
     public function store(Request $request) {
         $validated = $request->validate([
-            "content" => ["required", "max:255"]
+            "content" => ["required", "max:255"],
+            "category_id" => ["required"]
             ]);  
         
             Post::create([
