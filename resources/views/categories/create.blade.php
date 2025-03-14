@@ -6,7 +6,7 @@
 <form action="/categories" method="POST">
     @csrf
 
-  <label for="category_name">kategorijas vārds:</label>
+  <label for="category_name">Kategorijas vārds:</label>
   <input type="text" name="category_name" required>
   @error("category_name")
   <p>{{ $message }}</p>

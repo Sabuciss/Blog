@@ -15,5 +15,16 @@
 @csrf
 @method("delete")
 <button type="submit">dzēst</button>
+
+
+
+<h3>Komentārs</h3>
+<label for="author">Autors</label>
+<input type="text" name="author" value="">
+
+<label for="comment">Komentārs</label>
+<input type="text" name="comment" value="">
+</label>
+
 </form>
 </x-layout>

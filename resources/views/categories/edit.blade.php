@@ -16,7 +16,7 @@
 
     
 
-    <button type="submit">saglabā</button>
+    <button type="submit">Saglabā</button>
 </form>
 
 </x-layout>
