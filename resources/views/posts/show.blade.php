@@ -18,13 +18,25 @@
 
 
 
-<h3>Komentārs</h3>
-<label for="author">Autors</label>
-<input type="text" name="author" value="">
+<form action="/comments/create" method="POST">
+    <input type="hidden" name="post_id" value="4">
+    <label>Autors:</label> 
+    <input type="text" name="author" required>
+    
+    <label>Komentārs:</label>
+    <textarea name="content" required></textarea>
+    
+    <button type="submit">Komentēt</button>
+</form>
 
-<label for="comment">Komentārs</label>
-<input type="text" name="comment" value="">
-</label>
+<h2>Komentāri</h2>
+<div id="comments">
+    @foreach ($post->comments as $comment)
+        <div>
+            <strong>{{ $comment->author }}</strong>: {{ $comment->content }}
+        </div>
+    @endforeach
+</div>
 
 </form>
 </x-layout>
