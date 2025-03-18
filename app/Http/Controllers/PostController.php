@@ -38,6 +38,7 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
+        $post->load('comments');
         return view("posts.show", compact("post"));
     }
 
@@ -52,10 +53,11 @@ class PostController extends Controller
     {
         $validated = $request->validate([
             'content' => ['required', 'max:255'],
-            'category_id' => ['required', 'max:255'],
+            'category_id' => ['required']
         ]);
     
         $post->content = $validated['content'];
+        $post->category_id = $validated['category_id'];
         $post->save();
     
         return redirect("/posts");

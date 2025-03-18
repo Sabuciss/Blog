@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string("author");
             $table->string("comment");
-            $table->dateTimeTz("datetime", precision: 0);
             $table->foreignId("post_id");
             $table->timestamps();
         });

@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string("content");
             $table->integer("category_id");
-            $table->integer("comment_id");
             $table->timestamps();
 
         });
