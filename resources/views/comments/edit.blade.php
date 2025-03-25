@@ -1,6 +1,6 @@
 <x-layout>
-    <h1>Komentāra rediģēšana</h1>
-
+    
+<h1>Komentāra rediģēšana</h1>
     <form action="/comments/{{ $comment->id }}" method="POST">
         @csrf
         @method('PUT')

@@ -24,7 +24,7 @@ class CommentController extends Controller
 
     public function edit(Comment $comment)
     {
-        return view('/comments/edit', compact('comment'));   
+        return view('comments.edit', compact('comment'));
     }
 
     public function update(Request $request, Comment $comment)
@@ -44,8 +44,9 @@ class CommentController extends Controller
 
     public function destroy(Comment $comment)
     {
-        $postId = $comment->post_id;
+        $postId = $comment->post_id; 
         $comment->delete();
-        return redirect("/posts/" . $validated["post_id"]);
+        return redirect("/posts/" . $postId);
     }
+    
 }
