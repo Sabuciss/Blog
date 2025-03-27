@@ -9,16 +9,18 @@ body {
     min-height: 100vh; 
     margin: 0; 
     font-size: 20px;
+    padding-top: 100px; 
 }
 
 nav {
-    width: 100%; 
-    position: absolute; 
-    top: 20px;
-    left: 50%; 
-    transform: translateX(-50%); 
-    display: flex;
-    justify-content: center; 
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Nedaudz caurspīdīgs fons */
+    padding: 10px 0;
+    z-index: 1000; /* Augstāks slānis, lai navbar paliek virsū */
 }
 
 .nav-list {
@@ -39,6 +41,23 @@ nav {
     padding: 0 16px;
 }
 
+.content {
+    margin-top: 120px; /* Nodrošina, ka komentāri nesākas pārāk augstu */
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+}
+
+.comment {
+    background: rgba(255, 255, 255, 0.1); /* Viegls caurspīdīgs fons */
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+}
+
 a {
     color: rgb(7, 71, 153);
     text-decoration: none;
@@ -56,7 +75,7 @@ a:hover {
     text-align: center;
 }
 
-/* Responsivitāte */
+/* Responsivitﾄ》e */
 @media (max-width: 1024px) {
     body {
         background: linear-gradient(150deg, rgba(1, 67, 102, 1) 0%, rgba(71, 147, 209, 1) 35%, rgba(196, 232, 255, 1) 100%);
@@ -126,11 +145,11 @@ a:hover {
 
     a {
         font-size: 18px;
-        color: rgb(255, 150, 100);
+        color: rgb(240, 110, 49);
     }
 
     a:hover {
-        color: rgb(200, 100, 50);
+        color: rgb(224, 80, 8);
     }
 
     .content {
