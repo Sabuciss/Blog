@@ -1,4 +1,3 @@
-
 <x-layout>
   <x-slot:title>
     {{ $post->content }}
@@ -7,19 +6,17 @@
   <h1>{{ $post->content }}</h1>
   <p>Kategorija: {{ $post->category->category_name }}</p>
 
-  
-<a href="/posts/{{ $post->id }}/edit">Rediģē</a>
+  <a href="/posts/{{ $post->id }}/edit">Rediģē</a>
 
+  <form method="POST" action="/posts/{{ $post->id }}">
+    @csrf
+    @method("delete")
+    <button type="submit">Dzēst</button>
+  </form>
 
-<form method="POST" action="/posts/{{ $post->id }}">
-@csrf
-@method("delete")
-<button type="submit">dzēst</button>
-</form>
+  <br><br>
 
-<br><br>
-
-<form action="/comments" method="POST">
+  <form action="/comments" method="POST">
     @csrf
     <input type="hidden" name="post_id" value="{{ $post->id }}">
 
@@ -36,30 +33,29 @@
     </label>
 
     <button type="submit">Komentēt</button>
-</form>
+  </form>
 
+  @error('author')
+      <p>{{ $message }}</p>
+  @enderror
 
-    @error('author')
-        <p>{{ $message }}</p>
-    @enderror
+  @error('comment')
+      <p>{{ $message }}</p>
+  @enderror
 
-    @error('comment')
-            <p>{{ $message }}</p>
-    @enderror
+  <h2>Komentāri</h2>
+  @foreach ($post->comments as $comment)
+    <div>
+      <p><strong>{{ $comment->author }}</strong></p>
+      <p>{{ $comment->comment }}</p>
+      <a href="/comments/{{ $comment->id }}/edit">Rediģē</a>
 
+      <form method="POST" action="/comments/{{ $comment->id }}" style="display: inline;">
+        @csrf
+        @method("delete")
+        <button type="submit">Dzēst</button>
+      </form>
+    </div>
+  @endforeach
 
-<h2>Komentāri</h2>
-@foreach ( $post->comments as $comment)
-<form action="/comments/{{ $comment->id }}" method="POST">
- 
-@csrf
-@method("delete")
-    <p>{{ $comment->author }}</p>
-    <p>: {{ $comment->comment }}</p>
-    <a href="/comments/{{ $comment->id }}/edit">Rediģē</a>
-
-</form>
-@endforeach
-
-</form>
 </x-layout>

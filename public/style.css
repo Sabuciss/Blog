@@ -1,7 +1,7 @@
-body{
-    background:rgb(255, 32, 78);
+body {
+    background: rgb(255, 32, 78);
     background: linear-gradient(150deg, rgba(97,1,102,1) 0%, rgba(203,71,209,1) 35%, rgba(252,196,255,1) 100%);
-    color:rgb(246, 220, 67);
+    color: rgb(246, 220, 67);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,13 +40,13 @@ nav {
 }
 
 a {
-    color:rgb(7, 71, 153);
+    color: rgb(7, 71, 153);
     text-decoration: none;
     font-size: 25px;
 }
 
 a:hover {
-    color:rgb(126, 96, 191);
+    color: rgb(126, 96, 191);
     text-decoration: underline; 
 }
 
@@ -54,4 +54,86 @@ a:hover {
     margin-top: 80px; 
     padding: 20px;
     text-align: center;
+}
+
+/* Responsivitāte */
+@media (max-width: 1024px) {
+    body {
+        background: linear-gradient(150deg, rgba(1, 67, 102, 1) 0%, rgba(71, 147, 209, 1) 35%, rgba(196, 232, 255, 1) 100%);
+        color: rgb(255, 255, 255);
+    }
+
+    .nav-list li {
+        font-size: 24px;
+        padding: 4px 12px;
+    }
+    
+    a {
+        font-size: 22px;
+        color: rgb(255, 200, 100);
+    }
+
+    a:hover {
+        color: rgb(255, 150, 50);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background: linear-gradient(150deg, rgba(102, 1, 67, 1) 0%, rgba(209, 71, 147, 1) 35%, rgba(255, 196, 232, 1) 100%);
+        color: rgb(200, 255, 200);
+    }
+
+    nav {
+        top: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-list li {
+        font-size: 22px;
+        padding: 8px 0;
+    }
+
+    a {
+        font-size: 20px;
+        color: rgb(100, 255, 200);
+    }
+
+    a:hover {
+        color: rgb(50, 200, 150);
+    }
+
+    .content {
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background: linear-gradient(150deg, rgba(67, 102, 1, 1) 0%, rgba(147, 209, 71, 1) 35%, rgba(196, 255, 232, 1) 100%);
+        color: rgb(255, 220, 100);
+    }
+
+    .nav-list li {
+        font-size: 20px;
+    }
+
+    a {
+        font-size: 18px;
+        color: rgb(255, 150, 100);
+    }
+
+    a:hover {
+        color: rgb(200, 100, 50);
+    }
+
+    .content {
+        padding: 10px;
+    }
 }
