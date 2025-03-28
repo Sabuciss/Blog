@@ -18,9 +18,9 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Nedaudz caurspīdīgs fons */
+    background: rgba(0, 0, 0, 0.7);
     padding: 10px 0;
-    z-index: 1000; /* Augstāks slānis, lai navbar paliek virsū */
+    z-index: 1000;
 }
 
 .nav-list {
@@ -100,7 +100,7 @@ a:hover {
 @media (max-width: 768px) {
     body {
         background: linear-gradient(150deg, rgba(102, 1, 67, 1) 0%, rgba(209, 71, 147, 1) 35%, rgba(255, 196, 232, 1) 100%);
-        color: rgb(200, 255, 200);
+        color: rgb(152, 221, 152);
     }
 
     nav {
@@ -121,11 +121,11 @@ a:hover {
 
     a {
         font-size: 20px;
-        color: rgb(100, 255, 200);
+        color: rgb(14, 245, 164);
     }
 
     a:hover {
-        color: rgb(50, 200, 150);
+        color: rgb(5, 114, 78);
     }
 
     .content {
@@ -135,24 +135,30 @@ a:hover {
 
 @media (max-width: 480px) {
     body {
-        background: linear-gradient(150deg, rgba(67, 102, 1, 1) 0%, rgba(147, 209, 71, 1) 35%, rgba(196, 255, 232, 1) 100%);
-        color: rgb(255, 220, 100);
+        background: rgb(2,106,7);
+        background: linear-gradient(150deg, rgba(2,106,7,1) 0%, rgba(26,204,35,1) 43%, rgba(43,245,84,1) 81%);
+        color: black; 
     }
-
-    .nav-list li {
-        font-size: 20px;
+    .nav-list {
+        display: none;
     }
 
     a {
         font-size: 18px;
-        color: rgb(240, 110, 49);
+        color: black;
     }
 
     a:hover {
-        color: rgb(224, 80, 8);
+        color: #444444; 
     }
 
     .content {
         padding: 10px;
+        color: black; 
+    }
+
+    .comment {
+        background: rgba(255, 255, 255, 0.2); 
+        color: black; 
     }
 }

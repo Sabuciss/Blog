@@ -9,5 +9,6 @@
         <li><a href="/categories/create">izveido kategoriju</a></li>
 
     </ul>
+    
 </nav>
 </header>

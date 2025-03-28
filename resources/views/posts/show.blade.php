@@ -53,6 +53,7 @@
     <div class="comment">
         <p><strong>{{ $comment->author }}</strong></p>
         <p>{{ $comment->comment }}</p>
+        <p>{{ $comment->created_at }}</p>
         <a href="/comments/{{ $comment->id }}/edit">Rediģē</a>
 
         <form method="POST" action="/comments/{{ $comment->id }}">
