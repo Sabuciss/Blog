@@ -18,9 +18,9 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7); /* Nedaudz caurspīdīgs fons */
     padding: 10px 0;
-    z-index: 1000;
+    z-index: 1000; /* Augstāks slānis, lai navbar paliek virsū */
 }
 
 .nav-list {
@@ -139,8 +139,10 @@ a:hover {
         background: linear-gradient(150deg, rgba(2,106,7,1) 0%, rgba(26,204,35,1) 43%, rgba(43,245,84,1) 81%);
         color: black; 
     }
-    .nav-list {
-        display: none;
+
+    .nav-list li {
+        font-size: 20px;
+        color: black; 
     }
 
     a {
